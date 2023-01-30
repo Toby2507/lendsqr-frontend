@@ -1,0 +1,32 @@
+$darkBlue: #213F7D;
+$skyeBlue: #39CDCC;
+$primaryBlue: #545F7D;
+$accentBlue: rgba(84, 95, 125, 0.15);
+$statusYellow: #E9B200;
+$statusRed: #E4033B;
+$statusGreen: #39CD62;
+$tablet: 712px;
+$desktop: 956px;
+
+@mixin vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin grid-row-2 {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+}
+
+@mixin tablet {
+  @media all and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media all and (min-width: $desktop) {
+    @content;
+  }
+}
