@@ -76,12 +76,43 @@
       gap: 1rem;
       justify-content: center;
 
+      .input-container {
+        @include vertical-flex;
+        gap: .5rem;
+        justify-content: center;
+
+        p {
+          color: $statusRed;
+          opacity: .6;
+        }
+      }
+
+      .onscreen {
+        width: 100%;
+        background: $mellowRed;
+        color: $statusRed;
+        border-radius: 5px;
+        padding: .25rem 1rem;
+        font-size: 1rem;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      .offscreen {
+        position: absolute;
+        left: -9999px;
+      }
+
       &--input {
         padding-inline: 1rem;
         height: 2.7rem;
         border: 2px solid $accentBlue;
         border-radius: 5px;
         color: $primaryBlue;
+
+        &.input--error {
+          border-color: $mellowRed;
+        }
 
         &::placeholder {
           color: $primaryBlue;

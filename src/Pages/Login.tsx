@@ -1,12 +1,37 @@
-import React, { useState } from 'react';
-import logo from '../Images/logo.svg';
+import { useRef, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
 import loginHero from '../Images/login_hero.webp';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import logo from '../Images/logo.svg';
+import { userInterface } from '../Utils/interfaces';
+import { getFromLocal, setLocal } from '../Utils/localStorage';
+
+interface loginInterface {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<loginInterface>();
+  const errRef = useRef<HTMLParagraphElement>(null);
+  const [errMsg, setErrMsg] = useState<string>("");
   const [showPass, setShowPass] = useState<boolean>(false);
+
+  const onSubmit: SubmitHandler<loginInterface> = data => {
+    const users = getFromLocal("LendsqrUsers");
+    const isUser = users.find((user: userInterface) => user.email === data.email);
+    if (isUser) {
+      setLocal("currentUser", isUser);
+      reset();
+      navigate('dashboard');
+    } else {
+      setErrMsg("User not found");
+      setTimeout(() => setErrMsg(""), 3000);
+      errRef.current?.focus();
+    }
+  };
+
   return (
     <main className="main">
       <section className="login-container">
@@ -23,11 +48,35 @@ const Login = () => {
             <h1>Welcome!</h1>
             <p>Enter details to login.</p>
           </div>
-          <form className="login-form__form">
-            <input className='login-form__form--input' type="text" {...register('email')} placeholder='Email' />
-            <div className="pass">
-              <input type={showPass ? "text" : "password"} {...register('password')} placeholder='Password' />
-              <span onClick={() => setShowPass(!showPass)}>{showPass ? "hide" : "show"}</span>
+          <form className="login-form__form" onSubmit={handleSubmit(onSubmit)}>
+            <p ref={errRef} className={errMsg ? "onscreen" : "offscreen"} aria-live='assertive'>{errMsg}</p>
+            <div className="input-container">
+              <input
+                className={`login-form__form--input ${errors.email ? 'input--error' : ''}`}
+                type="email"
+                {...register('email', {
+                  required: 'Email is required', pattern: {
+                    value: /^[\w.+-]{3,}@[\w-]+\.[\w-]{2,}$/,
+                    message: "Email is invalid"
+                  }
+                })}
+                placeholder='Email'
+                aria-label='Email'
+              />
+              {errors.email && <p>{errors.email.message}</p>}
+            </div>
+            <div className="input-container">
+              <div className="pass">
+                <input
+                  className={errors.password ? 'input--error' : ''}
+                  type={showPass ? "text" : "password"}
+                  {...register('password', { required: 'Password is required' })}
+                  placeholder='Password'
+                  aria-label='Password'
+                />
+                <span onClick={() => setShowPass(!showPass)}>{showPass ? "hide" : "show"}</span>
+              </div>
+              {errors.password && <p>{errors.password.message}</p>}
             </div>
             <Link to='#'><span>forgot password?</span></Link>
             <button type="submit">log in</button>

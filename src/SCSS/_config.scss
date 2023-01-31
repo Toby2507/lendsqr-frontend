@@ -2,9 +2,12 @@ $darkBlue: #213F7D;
 $skyeBlue: #39CDCC;
 $primaryBlue: #545F7D;
 $accentBlue: rgba(84, 95, 125, 0.15);
-$statusYellow: #E9B200;
-$statusRed: #E4033B;
-$statusGreen: #39CD62;
+$statusYellow: rgb(233, 178, 0);
+$mellowYellow: rgba(233, 178, 0, .3);
+$statusRed: rgb(228, 3, 59);
+$mellowRed: rgba(228, 3, 59, .3);
+$statusGreen: rgb(57, 205, 98);
+$mellowGreen: rgba(57, 205, 98, .3);
 $tablet: 712px;
 $desktop: 956px;
 
@@ -13,10 +16,23 @@ $desktop: 956px;
   flex-direction: column;
 }
 
-@mixin grid-row-2 {
+@mixin normal-flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-content {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
   place-items: center;
+}
+
+@mixin grid-row-2 {
+  @include center-content;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@mixin transition-ease {
+  transition: all .5s ease-in-out;
 }
 
 @mixin tablet {

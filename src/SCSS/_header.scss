@@ -1,0 +1,200 @@
+.app__header {
+  @include normal-flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;
+  gap: 1rem;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+  @include tablet {
+    padding-inline: 2rem;
+  }
+
+  @include desktop {
+    justify-content: flex-start;
+    gap: 3rem;
+    padding-inline: 3rem;
+  }
+}
+
+.menu-btn {
+  position: relative;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  @include transition-ease;
+
+  &__burger {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    @include transition-ease;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      width: 100%;
+      height: 3px;
+      background: #000;
+      @include transition-ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      width: 80%;
+      height: 3px;
+      background: #000;
+      @include transition-ease;
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.header-logo {
+  @include center-content;
+  width: 8rem;
+}
+
+.site-nav {
+  display: none;
+  justify-content: space-between;
+
+  @include tablet {
+    flex: 1;
+    @include normal-flex;
+  }
+
+  @include desktop {
+    padding-left: 10rem;
+  }
+
+  &__search {
+    display: none;
+    position: relative;
+    width: 20rem;
+    height: 35px;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: .75rem;
+      border: 1px solid rgba(33, 63, 125, .2);
+      border-radius: 8px;
+      color: $primaryBlue;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: rgba(33, 63, 125, .4);
+        font-size: .75rem;
+      }
+    }
+
+    button {
+      position: absolute;
+      @include center-content;
+      top: 0;
+      right: 0;
+      width: 15%;
+      height: 100%;
+      background: $skyeBlue;
+      color: #fff;
+      font-size: 1.3rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    @include desktop {
+      @include normal-flex;
+    }
+  }
+
+  &__docs {
+    width: 100%;
+    justify-self: flex-end;
+    text-decoration: underline;
+    text-align: right;
+    color: $darkBlue;
+
+    @include desktop {
+      width: auto;
+    }
+  }
+}
+
+.user-info {
+  @include normal-flex;
+  justify-content: center;
+  gap: .5rem;
+
+  @include tablet {
+    gap: 1rem;
+  }
+
+  @include desktop {
+    gap: 2rem;
+  }
+
+  &__wrapper {
+    @include normal-flex;
+    gap: .5rem;
+  }
+
+  &__notification {
+    display: none;
+    font-size: 2rem;
+    color: $darkBlue;
+    height: 2rem;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid $darkBlue;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__details {
+    @include normal-flex;
+    gap: .2rem;
+
+    &--name {
+      display: none;
+      font-weight: 500;
+      color: $darkBlue;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &--icon {
+      color: $darkBlue;
+      font-size: .85rem;
+    }
+  }
+}
