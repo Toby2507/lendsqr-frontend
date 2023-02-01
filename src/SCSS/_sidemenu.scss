@@ -1,0 +1,125 @@
+.sidemenu {
+  position: absolute;
+  width: 100%;
+  max-width: 18rem;
+  height: 100%;
+  z-index: 2;
+  transform: translateX(-100%);
+  @include box-shadow;
+  @include transition-ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @include desktop {
+    position: relative;
+    transform: translate(0);
+  }
+
+  &-nav {
+    @include vertical-flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+
+    &__search {
+      @extend .site-nav__search;
+      @include normal-flex;
+      width: 100%;
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &__docs {
+      @include normal-flex;
+      gap: 1rem;
+      text-decoration: underline;
+      text-align: right;
+      color: $darkBlue;
+
+      @include tablet {
+        display: none;
+      }
+
+      &--notification {
+        font-size: 1.3rem;
+        height: 1.3rem;
+        color: $darkBlue;
+      }
+    }
+  }
+
+  &-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: #fff;
+  }
+
+  &-items {
+    @include vertical-flex;
+    padding-bottom: 2rem;
+
+    &__heading {
+      padding: 1rem;
+      font-weight: 500;
+      font-size: .75rem;
+      text-transform: uppercase;
+
+      @include tablet {
+        padding-inline: 2rem;
+      }
+    }
+
+    &__item {
+      @include normal-flex;
+      gap: .7rem;
+      padding: 1rem;
+      @include transition-ease;
+
+      @include tablet {
+        padding-inline: 2rem;
+      }
+
+      &--img {
+        width: 1rem;
+      }
+
+      &--title {
+        color: $darkBlue;
+      }
+
+      &.active {
+        background: rgba(57, 205, 204, .06);
+        border-left: 3px solid $skyeBlue;
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -999;
+  background: transparent;
+  @include transition-ease;
+
+  &.open {
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+
+    @include desktop {
+      background: #fff;
+      z-index: -999;
+    }
+  }
+}

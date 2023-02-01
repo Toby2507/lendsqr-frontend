@@ -1,0 +1,113 @@
+{
+  "customers": [
+    {
+      "menuTitle": "Users",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245811/users_tqmfth.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Guarantors",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245814/guarantors_ajesab.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Loans",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245814/loans_xtt3vw.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Decision Models",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245812/decision_models_v2vinv.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Savings",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245815/savings_vzdtvx.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Loan Requests",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245814/loan_requests_products_kuxznd.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Whitelist",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245812/whitelist_y3b4my.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Karma",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245813/karma_m60nob.svg",
+      "menuUrl": "dashboard"
+    }
+  ],
+  "business": [
+    {
+      "menuTitle": "Organization",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245814/organisation_jakcvc.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Loan Products",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245814/loan_requests_products_kuxznd.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Savings Products",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245816/savings_products_lksr3v.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Fees and Charges",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245813/fees_charges_y4j4dn.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Transactions",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245811/transaction_bwhyqm.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Services",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245810/services_g7ap8x.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Service Account",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245816/service_account_cgiwts.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Settlements",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245811/settlements_pphh1n.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Reports",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245815/reports_uqm4ga.svg",
+      "menuUrl": "dashboard"
+    }
+  ],
+  "settings": [
+    {
+      "menuTitle": "Preferences",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245814/preferences_y9ztqh.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Fees and Pricing",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245812/fees_pricing_eabd8j.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Audit Logs",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245811/audit_logs_o4xcjh.svg",
+      "menuUrl": "dashboard"
+    },
+    {
+      "menuTitle": "Systems Messages",
+      "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245902/systems_messages_cv0rtg.svg",
+      "menuUrl": "dashboard"
+    }
+  ]
+}

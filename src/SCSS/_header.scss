@@ -1,10 +1,12 @@
 .app__header {
   @include normal-flex;
+  position: relative;
   justify-content: space-between;
   padding: 1rem;
   background: #fff;
   gap: 1rem;
-  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  @include box-shadow;
+  z-index: 3;
 
   @include tablet {
     padding-inline: 2rem;
@@ -13,7 +15,7 @@
   @include desktop {
     justify-content: flex-start;
     gap: 3rem;
-    padding-inline: 3rem;
+    padding-inline: 2rem 3rem;
   }
 }
 
@@ -51,6 +53,20 @@
       height: 3px;
       background: #000;
       @include transition-ease;
+    }
+
+    &.open {
+      transform: rotate(720deg);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(3px, 5px);
+      }
+
+      &::after {
+        width: 100%;
+        transform: rotate(-45deg) translate(5px, -7px);
+      }
     }
   }
 

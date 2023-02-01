@@ -40,3 +40,15 @@ export interface userInterface {
     loanRepayment: string;
   };
 }
+
+export interface menuItemInterface {
+  menuTitle: string;
+  menuIcon: string;
+  menuUrl: string;
+}
+
+export interface sidemenuInterface {
+  customers: menuItemInterface[],
+  business: menuItemInterface[],
+  settings: menuItemInterface[];
+}

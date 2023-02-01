@@ -1,22 +1,16 @@
-import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
+import { useEffect } from 'react';
+import { AiOutlineBell } from 'react-icons/ai';
 import { VscTriangleDown } from 'react-icons/vsc';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.svg';
 import { getFromLocal } from '../../Utils/localStorage';
-import { useEffect } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useGlobal } from '../../context';
+import AppSearch from '../AppSearch';
 
-interface searchInterface {
-  search: string;
-}
 const Header = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm<searchInterface>();
+  const { showSideMenu, setShowSideMenu } = useGlobal();
   const currentUser = getFromLocal("currentUser");
-
-  const onSearch: SubmitHandler<searchInterface> = data => {
-    console.log(data);
-  };
 
   useEffect(() => {
     if (!currentUser) {
@@ -25,17 +19,14 @@ const Header = () => {
   }, [currentUser, navigate]);
   return (
     <header className="app__header">
-      <div className="menu-btn">
-        <span className="menu-btn__burger"></span>
+      <div className="menu-btn" onClick={() => setShowSideMenu(!showSideMenu)}>
+        <span className={`menu-btn__burger ${showSideMenu ? "open" : ""}`}></span>
       </div>
       <figure className="header-logo">
         <img src={logo} alt="lendsqr" />
       </figure>
       <div className="site-nav">
-        <form className="site-nav__search" onSubmit={handleSubmit(onSearch)}>
-          <input type="search" id="search" {...register('search')} placeholder='Search for anything' />
-          <button type="submit"><AiOutlineSearch /></button>
-        </form>
+        <AppSearch parentClass='site' />
         <span className="site-nav__docs">
           <Link to="#">Docs</Link>
         </span>

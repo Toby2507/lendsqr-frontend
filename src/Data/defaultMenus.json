@@ -1,0 +1,13 @@
+[
+  {
+    "menuTitle": "Switch Organization",
+    "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245811/switch_organisation_kykppf.svg",
+    "menuUrl": "dashboard",
+    "isSelect": true
+  },
+  {
+    "menuTitle": "Dashboard",
+    "menuIcon": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675245812/dashboard_wj63f2.svg",
+    "menuUrl": "dashboard"
+  }
+]

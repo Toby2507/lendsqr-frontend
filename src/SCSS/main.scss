@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/avenir-next-lt-pro');
-@import 'reset', 'config', 'login', 'header';
+@import 'reset', 'config', 'login', 'header', 'sidemenu';
 
 body {
   font: 400 1rem/1.15 "Work Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -8,4 +8,13 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+}
+
+.main-grid {
+  @include normal-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100vw;
+  height: 100vh;
 }

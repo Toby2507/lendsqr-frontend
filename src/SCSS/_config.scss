@@ -35,6 +35,10 @@ $desktop: 956px;
   transition: all .5s ease-in-out;
 }
 
+@mixin box-shadow {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
 @mixin tablet {
   @media all and (min-width: $tablet) {
     @content;
