@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+## Table of contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Frontend Implementation of the Lendsqr Test for frontend engineering candidates.
 
-### `npm start`
+### The challenge
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Build the 4 pages Login, Dashboard, User page, User details page
+- The user pages should pull data from a mock api with 500 records
+- Use local storage or indexedDB to store and retrieve user details on the user details page.
+- The page must be mobile responsive
+- Some details are intentionally left out of this instruction set. We feel the candidate should be able to spot and address them
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To work with or inspect the code base
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone the repo
 
-### `npm run build`
+```bash
+git clone git@github.com:Toby2507/lendsqr-frontend.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- [Solution URL](https://github.com/Toby2507/lendsqr-frontend)
+- [Live Site URL](https://oluwatobi-salau-lendsqr-fe-test.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## My process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Setup my react project with create-react-app
+- Break the UI design down into components and work from there
+- Setup my CSS environment with SCSS in this case
+- Write an integration test to check for initial bugs and errors for the main components
+- Code the components and pages while making them respoonsive simulataneously
+- Finally, test the app on different browsers and devices
+- Deploy the app to Netlify
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Built with
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- React
+- Typescript
+- SCSS
+- Local storage for storing user list and details
+- Mobile-first workflow
+- [tanstack/react-table](https://tanstack.com/table/v8/docs/guide/introduction) for the dashboard table
 
-## Learn More
+### Challenges
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The dashboard table was a bit tricky to implement. I had to use a third party library to get the job done. I also couldn't shrink to the mobile view as expected so I had to make the table scrollable horizontally.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The user details page was pretty straightforward to implement. I opted for local storage to store the user details and retrieve them on the user details page.
+
+- There was no login endpoint so I had to improvise. I requested for the users list on page load so when the user enters an email and password, I check if there is a user with that email and since there was no password in the data provided, I just check if the email is valid.
