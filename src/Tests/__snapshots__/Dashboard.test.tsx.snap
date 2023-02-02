@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Component Test should render without error 1`] = `
+<section
+  className="dashboard"
+>
+  <h1
+    className="dashboard-title"
+  >
+    Users
+  </h1>
+  <div
+    className="dashboard-infobox"
+  >
+    <DashboardInfoBox
+      amount="2,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/all_users_bczc3b.svg"
+      key="0"
+      title="users"
+    />
+    <DashboardInfoBox
+      amount="2,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280918/active_users_ptnp9q.svg"
+      key="1"
+      title="active users"
+    />
+    <DashboardInfoBox
+      amount="12,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/user_loans_bu8eul.svg"
+      key="2"
+      title="users with loans"
+    />
+    <DashboardInfoBox
+      amount="102,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/user_savings_aryv4v.svg"
+      key="3"
+      title="users with savings"
+    />
+  </div>
+  <Memo(UserTable)
+    columns={
+      Array [
+        Object {
+          "accessorKey": "orgName",
+          "cell": [Function],
+          "header": "organization",
+        },
+        Object {
+          "accessorKey": "userName",
+          "cell": [Function],
+          "header": "username",
+        },
+        Object {
+          "accessorKey": "email",
+          "cell": [Function],
+          "header": "email",
+        },
+        Object {
+          "accessorKey": "phoneNumber",
+          "cell": [Function],
+          "header": "phone number",
+        },
+        Object {
+          "accessorFn": [Function],
+          "cell": [Function],
+          "header": "date joined",
+        },
+        Object {
+          "accessorFn": [Function],
+          "cell": [Function],
+          "header": "status",
+        },
+        Object {
+          "accessorKey": "id",
+          "cell": [Function],
+          "header": [Function],
+        },
+      ]
+    }
+    data={null}
+  />
+</section>
+`;
+
+exports[`Dashboard should render without error 1`] = `
+<section
+  className="dashboard"
+>
+  <h1
+    className="dashboard-title"
+  >
+    Users
+  </h1>
+  <div
+    className="dashboard-infobox"
+  >
+    <DashboardInfoBox
+      amount="2,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/all_users_bczc3b.svg"
+      key="0"
+      title="users"
+    />
+    <DashboardInfoBox
+      amount="2,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280918/active_users_ptnp9q.svg"
+      key="1"
+      title="active users"
+    />
+    <DashboardInfoBox
+      amount="12,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/user_loans_bu8eul.svg"
+      key="2"
+      title="users with loans"
+    />
+    <DashboardInfoBox
+      amount="102,453"
+      img="https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/user_savings_aryv4v.svg"
+      key="3"
+      title="users with savings"
+    />
+  </div>
+  <Memo(UserTable)
+    columns={
+      Array [
+        Object {
+          "accessorKey": "orgName",
+          "cell": [Function],
+          "header": "organization",
+        },
+        Object {
+          "accessorKey": "userName",
+          "cell": [Function],
+          "header": "username",
+        },
+        Object {
+          "accessorKey": "email",
+          "cell": [Function],
+          "header": "email",
+        },
+        Object {
+          "accessorKey": "phoneNumber",
+          "cell": [Function],
+          "header": "phone number",
+        },
+        Object {
+          "accessorFn": [Function],
+          "cell": [Function],
+          "header": "date joined",
+        },
+        Object {
+          "accessorFn": [Function],
+          "cell": [Function],
+          "header": "status",
+        },
+        Object {
+          "accessorKey": "id",
+          "cell": [Function],
+          "header": [Function],
+        },
+      ]
+    }
+    data={null}
+  />
+</section>
+`;

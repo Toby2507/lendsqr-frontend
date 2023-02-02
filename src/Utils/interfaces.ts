@@ -15,6 +15,8 @@ export interface userInterface {
     bvn: string;
     address: string;
     currency: string;
+    maritalStatus: string;
+    children: string;
   };
   guarantor: {
     firstName: string;
@@ -39,6 +41,8 @@ export interface userInterface {
     monthlyIncome: string[];
     loanRepayment: string;
   };
+  userTier: number;
+  userStatus: number;
 }
 
 export interface menuItemInterface {

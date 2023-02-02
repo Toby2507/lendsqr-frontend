@@ -7,6 +7,7 @@ import UserTable from '../Components/Dashboard/UserTable';
 import data from '../Data/infoBoxData.json';
 import { userInterface } from '../Utils/interfaces';
 import { getFromLocal } from '../Utils/localStorage';
+import RowOption from '../Components/Dashboard/RowOption';
 
 const Dashboard = () => {
   const infoBoxData = data;
@@ -35,13 +36,18 @@ const Dashboard = () => {
     },
     {
       header: 'date joined',
-      accessorKey: 'createdAt',
-      cell: (row) => dayjs(row.renderValue() as string).format('MMM DD, YYYY hh:mm A')
+      accessorFn: (row) => dayjs(row.createdAt).format('MMM DD, YYYY hh:mm A'),
+      cell: (row) => row.renderValue()
     },
     {
       header: 'status',
-      accessorFn: () => statuses[Math.floor(Math.random() * 4)],
+      accessorFn: (row) => statuses[row.userStatus],
       cell: (row) => <StatusCard type={row.renderValue() as string} />
+    },
+    {
+      header: ({ header }) => header.isPlaceholder = true,
+      accessorKey: 'id',
+      cell: (row) => <RowOption userId={row.renderValue() as string} />
     }
   ], [statuses]);
 

@@ -1,6 +1,6 @@
 import { userInterface } from "./interfaces";
 
-export const setLocal = (key: string, data: userInterface) => {
+export const setLocal = (key: string, data: userInterface | userInterface[]) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
 

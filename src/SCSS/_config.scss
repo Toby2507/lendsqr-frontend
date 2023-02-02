@@ -11,6 +11,7 @@ $mellowRed: rgba(228, 3, 59, .06);
 $mellowGreen: rgba(57, 205, 98, .06);
 $tablet: 712px;
 $desktop: 956px;
+$headerHeight: 4rem;
 
 @mixin vertical-flex {
   display: flex;
@@ -42,6 +43,12 @@ $desktop: 956px;
 
 @mixin thin-border {
   border: 1px solid rgba(33, 63, 125, 0.06);
+}
+
+@mixin shadow-box {
+  border-radius: 4px;
+  @include box-shadow;
+  @include thin-border;
 }
 
 @mixin tablet {

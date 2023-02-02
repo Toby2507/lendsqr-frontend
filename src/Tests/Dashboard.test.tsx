@@ -1,9 +1,12 @@
-import { render, screen } from "@testing-library/react";
+import Adapter from '@cfaester/enzyme-adapter-react-18';
+import Enzyme, { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Dashboard from "../Pages/Dashboard";
 
-describe("Dashboard", () => {
+Enzyme.configure({ adapter: new Adapter() });
+describe("Dashboard Component Test", () => {
   test("should render without error", () => {
-    render(<Dashboard />);
-    expect(screen.getByRole("heading", { name: /users/i })).toBeInTheDocument();
+    const dashboard = shallow(<Dashboard />);
+    expect(toJson(dashboard)).toMatchSnapshot();
   });
 });

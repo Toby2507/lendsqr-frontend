@@ -52,6 +52,7 @@ const UserTable = ({ columns, data }: tableInterface) => {
   return (
     <div className="dashboard-wrapper">
       <section className="dashboard-table">
+        {/* FILTER BOX */}
         {showFilterBox && (
           <div className="table-filter">
             {filterColumns[0].map((column, i) => <TableFilter key={i} column={column} {...filterBoxProps} />)}
@@ -61,6 +62,7 @@ const UserTable = ({ columns, data }: tableInterface) => {
             </div>
           </div>
         )}
+        {/* DATA TABLE */}
         <table>
           <thead className="dashboard-table__header">
             {table.getHeaderGroups().map(headerGroup => (
@@ -69,7 +71,7 @@ const UserTable = ({ columns, data }: tableInterface) => {
                   <th key={header.id}>
                     <div className="dashboard-table__header--heading" onClick={() => setShowFilterBox(!showFilterBox)}>
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                      <IoFilter />
+                      {!header.isPlaceholder && < IoFilter />}
                     </div>
                   </th>
                 ))}
@@ -89,7 +91,9 @@ const UserTable = ({ columns, data }: tableInterface) => {
           </tbody>
         </table>
       </section>
+      {/* NAVIGATION */}
       <div className="dashboard-navigation">
+        {/* ALTER PAGE SIZE */}
         <div className="dashboard-navigation__size">
           <p>Showing</p>
           <select
@@ -100,6 +104,7 @@ const UserTable = ({ columns, data }: tableInterface) => {
           </select>
           <p>out of {data.length}</p>
         </div>
+        {/* NAVIGATE PAGES */}
         <div className="dashboard-navigation__page">
           <button
             className="dashboard-navigation__page--btn"

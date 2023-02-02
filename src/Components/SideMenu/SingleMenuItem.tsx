@@ -1,6 +1,7 @@
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { menuItemInterface } from '../../Utils/interfaces';
+import { useGlobal } from '../../context';
 
 interface menuInterface extends menuItemInterface {
   isActive: boolean;
@@ -9,9 +10,14 @@ interface menuInterface extends menuItemInterface {
 }
 
 const SingleMenuItem = ({ menuTitle, menuIcon, menuUrl, isActive, activate, isSelect = false }: menuInterface) => {
+  const { setShowSideMenu } = useGlobal();
+  const handleClick = () => {
+    activate(menuTitle);
+    setTimeout(() => setShowSideMenu(false), 100);
+  };
   return (
     <Link to={menuUrl}>
-      <article className={`sidemenu-items__item ${isActive ? "active" : ""}`} onClick={() => activate(menuTitle)}>
+      <article className={`sidemenu-items__item ${isActive ? "active" : ""}`} onClick={handleClick}>
         <figure className="sidemenu-items__item--img">
           <img src={menuIcon} alt={menuTitle} />
         </figure>

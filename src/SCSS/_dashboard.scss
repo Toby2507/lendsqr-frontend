@@ -2,15 +2,6 @@
   @include vertical-flex;
   gap: 2rem;
   width: 100%;
-  padding: 4rem 1rem;
-
-  @include tablet {
-    padding-inline: 2rem;
-  }
-
-  @include desktop {
-    padding-inline: 3rem;
-  }
 
   &-title {
     font-size: 1.5rem;
@@ -35,9 +26,7 @@
       width: 100%;
       gap: 1rem;
       padding: 1rem;
-      border-radius: 4px;
-      @include thin-border;
-      @include box-shadow;
+      @include shadow-box;
 
       &--img {
         width: 40px;
@@ -68,10 +57,8 @@
   &-table {
     width: 100%;
     padding: 1rem;
-    border-radius: 4px;
     overflow-x: auto;
-    @include thin-border;
-    @include box-shadow;
+    @include shadow-box;
 
     th,
     td {
@@ -83,6 +70,7 @@
         @include normal-flex;
         flex: 1;
         gap: .4rem;
+        cursor: pointer;
       }
 
       th {
@@ -144,6 +132,7 @@
         font-weight: 500;
         font-size: .85rem;
         color: $darkBlue;
+        cursor: pointer;
 
         &:focus {
           outline: none;
@@ -162,6 +151,7 @@
         border-radius: 4px;
         font-size: 1rem;
         color: $darkBlue;
+        cursor: pointer;
       }
 
       p {
@@ -214,10 +204,8 @@
   gap: 1rem;
   background: #fff;
   padding: 1.5rem 1rem;
-  border-radius: 4px;
   z-index: 2;
-  @include box-shadow;
-  @include thin-border;
+  @include shadow-box;
 
   &__input {
     @include vertical-flex;
@@ -271,6 +259,43 @@
       background: $skyeBlue;
       color: #fff;
       border-color: transparent;
+    }
+  }
+}
+
+.row-options {
+  position: relative;
+
+  &__btn {
+    font-size: 1.2rem;
+    color: $primaryBlue;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__box {
+    @include vertical-flex;
+    gap: .75rem;
+    padding: .75rem 1rem;
+    position: absolute;
+    top: 100%;
+    right: -1rem;
+    width: 10rem;
+    background: #fff;
+    @include shadow-box;
+    z-index: 1;
+
+    &--item {
+      @include normal-flex;
+      gap: .5rem;
+      font-size: 1.2rem;
+      color: $primaryBlue;
+
+      p {
+        font-weight: 500;
+        font-size: .85rem;
+        text-transform: capitalize;
+      }
     }
   }
 }

@@ -1,0 +1,303 @@
+.userpage {
+  @include vertical-flex;
+  gap: 2rem;
+
+  &-goback {
+    @include normal-flex;
+    gap: .75rem;
+    color: $primaryBlue;
+    text-transform: capitalize;
+
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+
+  &-header {
+    @include vertical-flex;
+    gap: .75rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $darkBlue;
+      text-transform: capitalize;
+    }
+
+    &__btns {
+      @include normal-flex;
+      justify-content: space-between;
+      gap: .75rem;
+
+      &--blacklist {
+        padding: .5rem 1rem;
+        border: 1px solid $statusRed;
+        border-radius: 8px;
+        font-size: .85rem;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        color: $statusRed;
+        letter-spacing: .1em;
+      }
+
+      &--activate {
+        @extend .userpage-header__btns--blacklist;
+        border-color: $skyeBlue;
+        color: $skyeBlue;
+      }
+    }
+  }
+
+  &-account {
+    @include normal-flex;
+    position: relative;
+    padding: 1rem;
+    gap: 1rem;
+    @include shadow-box;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      padding-bottom: 0;
+    }
+
+    &__wrapper {
+      @include vertical-flex;
+      flex: 1;
+
+      @include tablet {
+        flex-direction: row;
+      }
+    }
+
+    &__info {
+      @include normal-flex;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(84, 95, 125, .2);
+
+      @include tablet {
+        padding: 0 1rem 0 0;
+        border-bottom: 0;
+        border-right: 1px solid rgba(84, 95, 125, .2);
+      }
+
+      &--img {
+        width: 5rem;
+        height: 5rem;
+        border: 1px solid $primaryBlue;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      &--info {
+        @include vertical-flex;
+        gap: .3rem;
+        font-size: .85rem;
+
+        h2 {
+          font-size: 1.3rem;
+          font-weight: 500;
+          color: $darkBlue;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    &__tier {
+      @include vertical-flex;
+      gap: .2rem;
+      padding-block: 1rem;
+      border-bottom: 1px solid rgba(84, 95, 125, .2);
+
+      @include tablet {
+        justify-content: center;
+        padding: 0 1rem;
+        border-bottom: 0;
+        border-right: 1px solid rgba(84, 95, 125, .2);
+      }
+
+      P {
+        font-weight: 500;
+        font-size: .85rem;
+        text-transform: capitalize;
+      }
+
+      &--star {
+        @include normal-flex;
+        gap: .2rem;
+        font-size: 1rem;
+        color: $statusYellow;
+      }
+    }
+
+    &__savings {
+      @include vertical-flex;
+      padding-top: 1rem;
+      gap: .2rem;
+      font-size: .75rem;
+      color: $darkBlue;
+
+      @include tablet {
+        justify-content: center;
+        padding-top: 0;
+        padding-left: 1rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+    }
+
+    &__nav {
+      @include vertical-flex;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: max-content;
+      height: max-content;
+      padding-block: 1rem;
+      background-color: #fff;
+      @include transition-ease;
+      overflow: hidden;
+      @include shadow-box;
+
+      @include tablet {
+        flex-direction: row;
+        position: static;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      &--burger {
+        align-self: flex-end;
+        font-size: 1.2rem;
+        color: $primaryBlue;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &--navs {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        @include transition-ease;
+
+        @include tablet {
+          @include normal-flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          height: auto;
+          width: 100%;
+        }
+
+        &.open {
+          height: 10.5rem;
+          width: 100%;
+
+          @include tablet {
+            height: auto;
+          }
+        }
+
+        li {
+          padding: .3rem 1rem;
+          color: $primaryBlue;
+          text-transform: capitalize;
+          border-right: 2px solid transparent;
+          @include transition-ease;
+          cursor: pointer;
+
+          &.active {
+            color: $skyeBlue;
+            border-color: $skyeBlue;
+          }
+
+          @include tablet {
+            text-align: center;
+            border-right: 0;
+            border-bottom: 2px solid transparent;
+
+            &.active {
+              border-color: $skyeBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-personal {
+    width: 100%;
+    @include vertical-flex;
+    padding-inline: 1rem;
+    @include shadow-box;
+
+    @include tablet {
+      padding-inline: 1.5rem;
+    }
+
+    &__article {
+      width: 100%;
+      @include vertical-flex;
+      gap: 1rem;
+      padding-block: 1.5rem;
+      border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+
+      &--title {
+        font-weight: 500;
+        color: $darkBlue;
+        text-transform: capitalize;
+      }
+
+      &--info {
+        width: 100%;
+        @include normal-flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+
+        &-single {
+          min-width: 40%;
+          @include vertical-flex;
+          gap: .3rem;
+
+          @include tablet {
+            min-width: 30%;
+          }
+
+          @include desktop {
+            min-width: 20%;
+          }
+
+          h4 {
+            font-size: .75rem;
+            text-transform: uppercase;
+          }
+
+          p {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
