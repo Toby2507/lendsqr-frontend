@@ -11,6 +11,7 @@ import { getFromLocal } from '../Utils/localStorage';
 const Dashboard = () => {
   const infoBoxData = data;
   const users: userInterface[] = getFromLocal("LendsqrUsers");
+  const statuses = useMemo(() => ["Blacklisted", "Inactive", "Pending", "ActiveUser"], []);
   const columns = useMemo<ColumnDef<userInterface>[]>(() => [
     {
       header: 'organization',
@@ -39,13 +40,10 @@ const Dashboard = () => {
     },
     {
       header: 'status',
-      accessorFn: () => {
-        const randomStatus = Math.floor(Math.random() * 4);
-        return <StatusCard type={randomStatus} />;
-      },
-      cell: (row) => row.renderValue()
+      accessorFn: () => statuses[Math.floor(Math.random() * 4)],
+      cell: (row) => <StatusCard type={row.renderValue() as string} />
     }
-  ], []);
+  ], [statuses]);
 
   return (
     <section className="dashboard">

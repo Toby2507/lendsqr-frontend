@@ -1,14 +1,12 @@
-import React from 'react';
-
-const StatusCard = ({ type }: { type: number; }) => {
-  const values = [
-    { name: "blacklisted", className: "statusCard__red" },
-    { name: "inactive", className: "statusCard__blue" },
-    { name: "pending", className: "statusCard__yellow" },
-    { name: "active", className: "statusCard__green" },
-  ];
+const StatusCard = ({ type }: { type: string; }) => {
+  const values = {
+    Blacklisted: { name: "blacklisted", className: "statusCard__red" },
+    Inactive: { name: "inactive", className: "statusCard__blue" },
+    Pending: { name: "pending", className: "statusCard__yellow" },
+    ActiveUser: { name: "active", className: "statusCard__green" },
+  };
   return (
-    <span className={values[type].className}>{values[type].name}</span>
+    <span className={values[type as keyof typeof values].className}>{values[type as keyof typeof values].name}</span>
   );
 };
 

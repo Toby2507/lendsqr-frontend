@@ -59,6 +59,12 @@
     }
   }
 
+  &-wrapper {
+    position: relative;
+    @include vertical-flex;
+    gap: 1rem;
+  }
+
   &-table {
     width: 100%;
     padding: 1rem;
@@ -196,5 +202,75 @@
     @extend .statusCard__blue;
     background: $mellowGreen;
     color: $statusGreen;
+  }
+}
+
+.table-filter {
+  @include vertical-flex;
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  width: 15rem;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 4px;
+  z-index: 2;
+  @include box-shadow;
+  @include thin-border;
+
+  &__input {
+    @include vertical-flex;
+    gap: .4rem;
+
+    &--label {
+      font-weight: 500;
+      font-size: .85rem;
+      text-transform: capitalize;
+    }
+
+    &--input {
+      padding: .5rem 1rem;
+      border: 1px solid rgba(33, 63, 125, .2);
+      border-radius: 8px;
+
+      &::placeholder {
+        font-size: .85rem;
+        text-transform: capitalize;
+        color: $primaryBlue;
+        opacity: .7;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__action {
+    @include normal-flex;
+    gap: 1rem;
+    width: 100%;
+    padding-top: .5rem;
+
+    &--reset {
+      width: 100%;
+      font-weight: 600;
+      text-align: center;
+      font-size: .85rem;
+      text-transform: capitalize;
+      color: $primaryBlue;
+      padding: .65rem 1rem;
+      background: #fff;
+      border: 1px solid $primaryBlue;
+      border-radius: 8px;
+    }
+
+    &--filter {
+      @extend .table-filter__action--reset;
+      background: $skyeBlue;
+      color: #fff;
+      border-color: transparent;
+    }
   }
 }

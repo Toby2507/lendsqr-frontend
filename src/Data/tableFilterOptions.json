@@ -1,0 +1,32 @@
+{
+  "orgName": {
+    "title": "organization",
+    "placeholder": "select",
+    "type": "text"
+  },
+  "userName": {
+    "title": "username",
+    "placeholder": "user",
+    "type": "text"
+  },
+  "email": {
+    "title": "email",
+    "placeholder": "email",
+    "type": "email"
+  },
+  "createdAt": {
+    "title": "date",
+    "placeholder": "date",
+    "type": "text"
+  },
+  "phoneNumber": {
+    "title": "phone number",
+    "placeholder": "phone number",
+    "type": "tel"
+  },
+  "status": {
+    "title": "status",
+    "placeholder": "select",
+    "type": "text"
+  }
+}
