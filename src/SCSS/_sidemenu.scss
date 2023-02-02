@@ -1,7 +1,8 @@
 .sidemenu {
   position: absolute;
   width: 100%;
-  max-width: 18rem;
+  min-width: 20rem;
+  max-width: 20rem;
   height: 100%;
   z-index: 2;
   transform: translateX(-100%);

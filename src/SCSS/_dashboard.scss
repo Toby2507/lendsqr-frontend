@@ -1,0 +1,200 @@
+.dashboard {
+  @include vertical-flex;
+  gap: 2rem;
+  width: 100%;
+  padding: 4rem 1rem;
+
+  @include tablet {
+    padding-inline: 2rem;
+  }
+
+  @include desktop {
+    padding-inline: 3rem;
+  }
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $darkBlue;
+  }
+
+  &-infobox {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__info {
+      @include vertical-flex;
+      align-items: flex-start;
+      width: 100%;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 4px;
+      @include thin-border;
+      @include box-shadow;
+
+      &--img {
+        width: 40px;
+        height: 40px;
+      }
+
+      &--title {
+        font-weight: 500;
+        font-size: .85rem;
+        text-transform: uppercase;
+      }
+
+      &--amount {
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $darkBlue;
+      }
+    }
+  }
+
+  &-table {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    @include thin-border;
+    @include box-shadow;
+
+    th,
+    td {
+      padding-block: 1rem;
+    }
+
+    &__header {
+      &--heading {
+        @include normal-flex;
+        flex: 1;
+        gap: .4rem;
+      }
+
+      th {
+        padding-inline: 1rem;
+        font-weight: 600;
+        font-size: .75rem;
+        text-transform: uppercase;
+
+        svg {
+          font-size: 1rem;
+        }
+      }
+
+    }
+
+    &__body {
+      td {
+        white-space: nowrap;
+        font-size: .85rem;
+        padding-inline: 1rem;
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+
+        @include desktop {
+          white-space: pre-wrap;
+        }
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &-navigation {
+    @include vertical-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__size {
+      @include normal-flex;
+      gap: .5rem;
+
+      P {
+        font-weight: 400;
+        font-size: .85rem;
+      }
+
+      select {
+        padding: .2rem .5rem .2rem .25rem;
+        border: 4px solid rgba(33, 63, 125, 0.01);
+        border-radius: 4px;
+        background: rgba(33, 63, 125, 0.1);
+        font-weight: 500;
+        font-size: .85rem;
+        color: $darkBlue;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    &__page {
+      @include normal-flex;
+      gap: 1rem;
+
+      &--btn {
+        @include center-content;
+        padding: .35rem .5rem;
+        background: rgba(33, 63, 125, 0.1);
+        border-radius: 4px;
+        font-size: 1rem;
+        color: $darkBlue;
+      }
+
+      p {
+        opacity: 0.6;
+
+        &:first-of-type {
+          font-weight: 500;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.statusCard {
+  &__blue {
+    padding: .5rem 1rem;
+    font-size: .85rem;
+    text-align: center;
+    border-radius: 100px;
+    background: $mellowBlue;
+    text-transform: capitalize;
+  }
+
+  &__red {
+    @extend .statusCard__blue;
+    background: $mellowRed;
+    color: $statusRed;
+  }
+
+  &__yellow {
+    @extend .statusCard__blue;
+    background: $mellowYellow;
+    color: $statusYellow;
+  }
+
+  &__green {
+    @extend .statusCard__blue;
+    background: $mellowGreen;
+    color: $statusGreen;
+  }
+}

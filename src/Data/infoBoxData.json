@@ -1,0 +1,22 @@
+[
+  {
+    "img": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/all_users_bczc3b.svg",
+    "title": "users",
+    "amount": "2,453"
+  },
+  {
+    "img": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280918/active_users_ptnp9q.svg",
+    "title": "active users",
+    "amount": "2,453"
+  },
+  {
+    "img": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/user_loans_bu8eul.svg",
+    "title": "users with loans",
+    "amount": "12,453"
+  },
+  {
+    "img": "https://res.cloudinary.com/db1nlq5lv/image/upload/v1675280917/user_savings_aryv4v.svg",
+    "title": "users with savings",
+    "amount": "102,453"
+  }
+]

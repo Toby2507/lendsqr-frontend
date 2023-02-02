@@ -3,11 +3,12 @@ $skyeBlue: #39CDCC;
 $primaryBlue: #545F7D;
 $accentBlue: rgba(84, 95, 125, 0.15);
 $statusYellow: rgb(233, 178, 0);
-$mellowYellow: rgba(233, 178, 0, .3);
 $statusRed: rgb(228, 3, 59);
-$mellowRed: rgba(228, 3, 59, .3);
 $statusGreen: rgb(57, 205, 98);
-$mellowGreen: rgba(57, 205, 98, .3);
+$mellowBlue: rgba(84, 95, 125, .06);
+$mellowYellow: rgba(233, 178, 0, .06);
+$mellowRed: rgba(228, 3, 59, .06);
+$mellowGreen: rgba(57, 205, 98, .06);
 $tablet: 712px;
 $desktop: 956px;
 
@@ -37,6 +38,10 @@ $desktop: 956px;
 
 @mixin box-shadow {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+@mixin thin-border {
+  border: 1px solid rgba(33, 63, 125, 0.06);
 }
 
 @mixin tablet {
