@@ -25,7 +25,8 @@ $headerHeight: 4rem;
 
 @mixin center-content {
   display: grid;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin grid-row-2 {
