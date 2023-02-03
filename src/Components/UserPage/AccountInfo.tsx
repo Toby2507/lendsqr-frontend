@@ -6,7 +6,6 @@ import { HiDotsVertical } from 'react-icons/hi';
 type navType = "gen" | "doc" | "bank" | "loan" | "save" | "app";
 
 const AccountInfo = ({ user }: { user: userInterface; }) => {
-  console.log(user);
   const [showNav, setShowNav] = useState<boolean>(false);
   const [activeNav, setActiveNav] = useState<navType>("gen");
   return (

@@ -55,7 +55,7 @@ const UserTable = ({ columns, data }: tableInterface) => {
         {/* FILTER BOX */}
         {showFilterBox && (
           <div className="table-filter">
-            {filterColumns[0].map((column, i) => <TableFilter key={i} column={column} {...filterBoxProps} />)}
+            {filterColumns[0].filter(column => column.id !== "id").map((column, i) => <TableFilter key={i} column={column} {...filterBoxProps} />)}
             <div className="table-filter__action">
               <button className="table-filter__action--reset" onClick={() => setResetTable(true)}>reset</button>
               <button className="table-filter__action--filter" onClick={() => setFilterTable(true)}>filter</button>

@@ -14,7 +14,7 @@
     "placeholder": "email",
     "type": "email"
   },
-  "createdAt": {
+  "date joined": {
     "title": "date",
     "placeholder": "date",
     "type": "text"

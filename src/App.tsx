@@ -25,9 +25,7 @@ const App = () => {
     setLocal("LendsqrUsers", users);
   };
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  useEffect(() => { fetchUsers(); }, []);
   return (
     <Routes>
       <Route index element={<Login />} />

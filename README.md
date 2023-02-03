@@ -57,3 +57,8 @@ npm install
 - The user details page was pretty straightforward to implement. I opted for local storage to store the user details and retrieve them on the user details page.
 
 - There was no login endpoint so I had to improvise. I requested for the users list on page load so when the user enters an email and password, I check if there is a user with that email and since there was no password in the data provided, I just check if the email is valid.
+
+### Initial LOGIN Details
+
+- **Email**: Cristian_Schmeler70@yahoo.com
+- **Password**: 123456
