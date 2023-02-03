@@ -82,9 +82,12 @@
       @include normal-flex;
       gap: 1rem;
       padding-bottom: 1rem;
+      padding-right: 2rem;
+      overflow-wrap: anywhere;
       border-bottom: 1px solid rgba(84, 95, 125, .2);
 
       @include tablet {
+        overflow-wrap: unset;
         padding: 0 1rem 0 0;
         border-bottom: 0;
         border-right: 1px solid rgba(84, 95, 125, .2);
